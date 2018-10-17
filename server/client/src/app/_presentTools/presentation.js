@@ -237,7 +237,7 @@ class Presentation {
     let chart = RadarChart.chart();
     let cfg = chart.config(); // retrieve default config
     let svg = d3.select(id).append('svg')
-      .attr('width', cfg.w + cfg.w + 50)
+      .attr('width', cfg.w + 50)
       .attr('height', cfg.h + cfg.h / 4);
     svg.append('g').classed('single', 1).datum(handleMap2()).call(chart);
   }

@@ -21,6 +21,8 @@ import {FormValidationService} from "./_validators/form-validation.service";
 import { SortPipe } from './_pipes/sort.pipe';
 import { ExamPipe } from './_pipes/exam.pipe';
 import { SortNumberPipe } from './_pipes/sort-number.pipe';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { SortNumberPipe } from './_pipes/sort-number.pipe';
     TypePipe,
     SortPipe,
     ExamPipe,
-    SortNumberPipe
+    SortNumberPipe,
+    NewsListComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

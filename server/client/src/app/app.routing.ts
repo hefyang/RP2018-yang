@@ -6,6 +6,7 @@ import {ExamComponent} from "./exam/exam.component";
 import {QuestionsComponent} from "./questions/questions.component";
 import {HistoryComponent} from "./history/history.component";
 import {ResultComponent} from "./result/result.component";
+import {NewsComponent} from "./news/news.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: "full"},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'exam', component: ExamComponent},
   {path: 'question', component: QuestionsComponent},
   {path: 'result', component: ResultComponent},
-  {path: 'history', component: HistoryComponent}
+  {path: 'history', component: HistoryComponent},
+  {path: 'news', component: NewsComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes, {onSameUrlNavigation: "reload"});
