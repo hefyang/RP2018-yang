@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys');
+const keys = require('../../config/keys_dev');
 const passport = require('passport');
 
 // Load User model
