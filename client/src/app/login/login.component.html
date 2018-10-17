@@ -1,0 +1,62 @@
+<app-header [title]="title"
+            [previousSection]="previousSection">
+</app-header>
+
+<div class="container-fluid mt-5 px-4 position-relative" style="top: 4rem">
+  <h2 class="text-center m-5">Sign In</h2>
+
+  <form [formGroup]="form">
+
+    <div class="form-group">
+      <label for="username" class="sr-only">User Name: </label>
+      <input type="text"
+             id="username"
+             name="username"
+             placeholder="User Name"
+             class="form-control form-control-lg"
+             formControlName="username">
+      <small class="form-text text-danger"
+             [hidden]="
+             !form.hasError('required', ['username']) ||
+             !(form.get('username').dirty && form.get('username').touched) &&
+             !clicked">
+        This field is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="Password"
+             class="form-control form-control-lg"
+             formControlName="password">
+      <small class="form-text text-danger"
+             [hidden]="
+             !form.hasError('required', ['password']) ||
+             !(form.get('password').dirty && form.get('password').touched) &&
+             !clicked">
+        This field is required.
+      </small>
+    </div>
+
+    <div class="mt-4 row">
+
+      <div class="col-6 pr-1">
+        <button type="submit"
+                class="btn btn-lg btn-primary btn-block"
+                (click)="login()" >Sign In
+        </button>
+      </div>
+
+      <div class="col-6 pl-1">
+        <button type="button"
+                class="btn btn-lg btn-outline-primary btn-block"
+                [routerLink] = "['/', 'register']" >Sign Up
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>

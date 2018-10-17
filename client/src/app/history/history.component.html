@@ -1,0 +1,21 @@
+<app-header [title]="title"
+            [previousSection]="previousSection">
+</app-header>
+
+<div class="container p-4 position-relative" style="top: 4rem">
+  <div class="card mb-3"
+       *ngFor="let exam of exams">
+    <div class="card-header">{{exam}}</div>
+
+    <div class="list-group list-group-flush">
+
+      <a *ngFor="let hisItem of history | exam: exam | sortNumber"
+         class="list-group-item list-group-item-action"
+         (click)="onClick(hisItem)">
+        Attempt time: {{hisItem.times}}
+      </a>
+
+    </div>
+
+  </div>
+</div>
