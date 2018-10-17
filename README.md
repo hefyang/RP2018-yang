@@ -1,5 +1,2 @@
 # test
-test
-second test
-4dbhdhjahj
-fkkfs
+this is the readme file for the research project
