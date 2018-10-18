@@ -1,0 +1,30 @@
+<app-header [title]="title"
+            [previousSection]="previousSection">
+</app-header>
+
+<div class="container p-3 position-relative" style="top: 4rem">
+  <div class="jumbotron mb-2">
+    <h2 class="display-4">Welcome!</h2>
+  </div>
+  <div class="row w-100 mx-0" style="height: calc(18vh)">
+    <div class="col-4 px-0 py-1 pr-2">
+      <button type="button"
+              class="btn btn-block btn-light h-100"
+              [routerLink] = "['/', 'exam']" >Exam
+      </button>
+    </div>
+    <div class="col-4 p-1">
+      <button type="button"
+              class="btn btn-block btn-light h-100"
+              [routerLink] = "['/', 'history']" >Feedback
+      </button>
+    </div>
+    <div class="col-4 px-0 py-1 pl-2">
+      <button type="button"
+              class="btn btn-block btn-light h-100">Questions
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-news-list></app-news-list>

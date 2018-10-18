@@ -1,0 +1,105 @@
+<app-header [title]="title"
+            [previousSection]="previousSection">
+</app-header>
+
+<div class="container-fluid mt-5 px-4 position-relative"  style="top: 4rem">
+  <h2 class="text-center m-5">Sign Up</h2>
+
+  <form [formGroup]="formModel"
+        (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="username" class="sr-only">User Name: </label>
+      <input type="text"
+             id="username"
+             name="username"
+             placeholder="User Name"
+             class="form-control form-control-lg"
+             formControlName="username">
+      <small class="form-text text-danger"
+             [hidden]="
+             !formModel.hasError('required', ['username']) ||
+             !(formModel.get('username').dirty && formModel.get('username').touched) &&
+             !clicked">
+        This field is required.
+      </small>
+    </div>
+
+    <!--<div class="form-group">-->
+      <!--<label for="email" class="sr-only">Email: </label>-->
+      <!--<input type="text"-->
+             <!--id="email"-->
+             <!--name="email"-->
+             <!--placeholder="Email"-->
+             <!--class="form-control form-control-lg"-->
+             <!--formControlName="email">-->
+      <!--<small class="form-text text-danger"-->
+             <!--[hidden]="-->
+              <!--!formModel.hasError('pattern', ['email']) ||-->
+              <!--!(formModel.get('email').touched && formModel.get('email').dirty)">-->
+        <!--The email address you entered is invalid.-->
+      <!--</small>-->
+      <!--<small class="form-text text-danger"-->
+             <!--[hidden]="-->
+             <!--!formModel.hasError('required', ['email']) ||-->
+             <!--!(formModel.get('email').dirty && formModel.get('email').touched) &&-->
+             <!--!clicked">-->
+        <!--This field is required.-->
+      <!--</small>-->
+    <!--</div>-->
+
+    <div formGroupName="passwordsGroup">
+      <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Password"
+               class="form-control form-control-lg"
+               formControlName="password">
+        <small class="form-text text-danger"
+               [hidden]="
+             !formModel.hasError('minlength', ['passwordsGroup', 'password']) ||
+             !(formModel.get('passwordsGroup.password').dirty && formModel.get('passwordsGroup.password').touched)">
+          The password should contain 8 characters.
+        </small>
+        <small class="form-text text-danger"
+               [hidden]="
+             !formModel.hasError('required', ['passwordsGroup', 'password']) ||
+             !(formModel.get('passwordsGroup.password').dirty && formModel.get('passwordsGroup.password').touched) &&
+             !clicked">
+          This field is required.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPW" class="sr-only">Confirm password</label>
+        <input type="password"
+               id="confirmPW"
+               name="confirmPW"
+               placeholder="Confirm password"
+               class="form-control form-control-lg"
+               formControlName="confirmPw">
+        <small class="form-text text-danger"
+               [hidden]="
+             !formModel.hasError('equal', ['passwordsGroup']) ||
+             !(formModel.get('passwordsGroup.confirmPw').dirty && formModel.get('passwordsGroup.confirmPw').touched)">
+          The password you entered is not identical.
+        </small>
+        <small class="form-text text-danger"
+               [hidden]="
+             !formModel.hasError('required', ['passwordsGroup', 'confirmPw']) ||
+             !(formModel.get('passwordsGroup.confirmPw').dirty && formModel.get('passwordsGroup.confirmPw').touched) &&
+             !clicked">
+          This field is required.
+        </small>
+      </div>
+
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+    </div>
+
+  </form>
+</div>
