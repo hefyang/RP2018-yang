@@ -23,3 +23,10 @@ file path: server/,
 command: npm run dev
 
 --
+
+sign up & login is necessary to use all these functions in the prototype.
+
+Do not use your own real word passwords.
+
+the examTest2 and examTest3 pages in the exam selection page are designed to demonstrate different types of the exams, but they are not clickable, because there is no data for the questions.
+ 
